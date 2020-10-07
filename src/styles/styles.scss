@@ -769,3 +769,16 @@ header {
         }
     }
 }
+.scroll {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    width: 120px;
+    i {
+        cursor: pointer;
+        font-size: 40px;
+        &:first-child {
+            margin-right: 5px;
+        }
+    }
+}

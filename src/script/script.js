@@ -1,9 +1,21 @@
 
-//reload when click logo
-var logo = document.querySelector('header > .mid-header > img');
-logo.addEventListener('click', () => {
+//reload website
+document.querySelector('header > .mid-header > img').addEventListener('click', () => {
     location.reload();
 });
+document.querySelector('header > .bottom-header > ul li:first-child').addEventListener('click', () => {
+    location.reload();
+});
+
+//scroll to top or bottom of the website
+
+var scrollBtn = document.querySelectorAll('.scroll i');
+scrollBtn[0].addEventListener('click', () => {
+    window.scrollTo(0,0);
+})
+scrollBtn[1].addEventListener('click', () => {
+    window.scrollTo(0,document.body.scrollHeight);
+})
 
 // search feature
 
