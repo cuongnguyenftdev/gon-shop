@@ -249,7 +249,7 @@ header .mid-header > div .categories ul li {
   list-style: none;
   font-family: Lato;
   font-size: 14px;
-  border-bottom: 0.5px solid #3f3f3f;
+  border-bottom: 0.5px solid #ebebeb;
 }
 
 header .mid-header > div .categories ul.is-show {
@@ -257,28 +257,37 @@ header .mid-header > div .categories ul.is-show {
 }
 
 header .mid-header > div .cart {
-  line-height: 40px;
+  line-height: 39px;
   width: 114px;
   left: 426px;
   border-color: #40bea7;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+}
+
+header .mid-header > div .cart div {
+  float: left;
 }
 
 header .mid-header > div .cart div:first-child {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  width: 30%;
   background-color: #40bea7;
   text-align: center;
 }
 
+header .mid-header > div .cart div:last-child {
+  width: 70%;
+  height: 100%;
+}
+
 header .mid-header > div .cart div:last-child span {
+  display: inline-block;
   width: 100%;
   text-align: center;
   color: #3f3f3f;
   font-family: Lato;
   font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 header .mid-header > div input {
@@ -428,7 +437,11 @@ header .bottom-header > ul li:nth-child(2) a {
   left: 40px;
 }
 
-#content .products .product div img {
+#content .products .product div {
+  position: relative;
+}
+
+#content .products .product div > img {
   display: inline-block;
   max-width: 100%;
   max-height: 95px;
@@ -437,11 +450,38 @@ header .bottom-header > ul li:nth-child(2) a {
   transition: all 0.5s;
 }
 
-#content .products .product div img:hover {
+#content .products .product div > img:hover {
   -webkit-animation: shake 1s;
           animation: shake 1s;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial;
+}
+
+#content .products .product div > div {
+  display: none;
+}
+
+#content .products .product div > div.out-of-stock {
+  position: absolute;
+  display: inline-block;
+  top: 3px;
+  left: -45px;
+  width: 90%;
+  height: 35%;
+}
+
+#content .products .product div > div.out-of-stock img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#content .products .product div > div.out-of-stock img:hover {
+  -webkit-animation: 0s;
+          animation: 0s;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 #content .products .zoom {
@@ -495,6 +535,11 @@ header .bottom-header > ul li:nth-child(2) a {
   background-color: transparent;
   border: 0.5px solid #e6e6e6;
   color: #747474;
+}
+
+#content .products .product-info .price button:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 #content .products .product-info .rating span:first-child {
@@ -553,6 +598,7 @@ header .bottom-header > ul li:nth-child(2) a {
   width: 30px;
   height: 30px;
   margin: 0px 5px;
+  cursor: pointer;
 }
 
 #content .products .product-info .choose-color div:nth-child(2) {
@@ -665,6 +711,11 @@ header .bottom-header > ul li:nth-child(2) a {
   border-top-color: transparent;
 }
 
+#content .products .product-info .buy .amount div:last-child button:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 #content .products .product-info .buy .buy-btn {
   width: 130px;
   margin-left: 13px;
@@ -680,12 +731,21 @@ header .bottom-header > ul li:nth-child(2) a {
   margin-right: 10px;
 }
 
+#content .products .product-info .buy .buy-btn:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 #content .products .product-info .buy .love, #content .products .product-info .buy .swap {
   margin-left: 13px;
   width: 40px;
   text-align: center;
   background-color: transparent;
   border: 0.5px solid #a9a9a9;
+}
+
+#content .products .product-info .buy .love.isLove {
+  background-color: lightcoral;
 }
 
 #content .products .product-info .socials {
@@ -1058,5 +1118,14 @@ header .bottom-header > ul li:nth-child(2) a {
 
 .scroll i:first-child {
   margin-right: 5px;
+}
+
+.swal-modal {
+  width: 30%;
+}
+
+.swal-modal .swal-text {
+  font-family: Lato;
+  font-weight: bold;
 }
 /*# sourceMappingURL=styles.css.map */
