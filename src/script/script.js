@@ -40,3 +40,11 @@ ulCategory.addEventListener('click', (event) => {
     document.querySelector('.mid-header .categories span').innerHTML = content;
     category.classList.toggle('is-show');
 })
+
+// zoom the image when click to it
+
+var getImg = document.querySelector('.products .product');
+getImg.addEventListener('click', (event) => {
+    var url = event.target.src;
+    document.querySelector('.products .zoom img').src = url;
+});
