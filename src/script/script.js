@@ -1,5 +1,7 @@
 
-//reload website
+// import swal from 'sweetalert';
+
+/* ----- reload website  ----- */
 document.querySelector('header > .mid-header > img').addEventListener('click', () => {
     location.reload();
 });
@@ -7,7 +9,7 @@ document.querySelector('header > .bottom-header > ul li:first-child').addEventLi
     location.reload();
 });
 
-//scroll to top or bottom of the website
+/* ----- scroll to top or bottom of the website ----- */
 
 var scrollBtn = document.querySelectorAll('.scroll i');
 scrollBtn[0].addEventListener('click', () => {
@@ -17,7 +19,7 @@ scrollBtn[1].addEventListener('click', () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 })
 
-// search feature
+/* ----- search feature ----- */
 
 var search = document.querySelector('.mid-header .search');
 search.addEventListener('click', function () {
@@ -26,7 +28,7 @@ search.addEventListener('click', function () {
     window.location.replace("https://www.google.com/search?sxsrf=ALeKk01M2BB_Lnj3D-NhBC4VqJ927eGmSw%3A1601993191152&ei=53l8X5juCNaJoATH74S4DQ&q=google+&oq=google+&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECCMQJzIECCMQJzIECAAQQzIFCAAQywEyBQgAEMsBMgUIABDLATICCAAyBQgAEMsBMgUIABDLAToECAAQR1C3BFi0B2CmCmgAcAJ4AIABgwGIAcECkgEDMi4xmAEAoAEBqgEHZ3dzLXdpesgBAsABAQ&sclient=psy-ab&ved=0ahUKEwjY_dzYkaDsAhXWBIgKHcc3AdcQ4dUDCA0&uact=5");
 });
 
-// categories
+/* ----- categories ----- */
 
 var category = document.querySelector('.mid-header .categories');
 category.addEventListener('click', () => {
@@ -41,10 +43,35 @@ ulCategory.addEventListener('click', (event) => {
     category.classList.toggle('is-show');
 })
 
-// zoom the image when click to it
+/* -----  zoom the image when click to it ----- */
 
 var getImg = document.querySelector('.products .product');
 getImg.addEventListener('click', (event) => {
     var url = event.target.src;
     document.querySelector('.products .zoom img').src = url;
+});
+
+
+/* ----- feature add-to-cart ----- */
+
+var amountBtn = document.querySelectorAll('.buy .amount button');
+var amount = document.querySelector('.buy .amount span');
+
+// amountBtn[0] is increase
+amountBtn[0].addEventListener('click', () => {
+    if (parseInt(amount.innerHTML) >= 5) {
+        swal({
+            text: 'Our shop does not have the quantity you need. Please feel free to contact us. Thank you!',
+            icon: "warning",
+        });
+        return;
+    }
+    amount.innerHTML = parseInt(amount.innerHTML) + 1;
+});
+
+// amountBtn[1] is decrease
+amountBtn[1].addEventListener('click', () => {
+    if (amount.innerHTML != 0) {
+        amount.innerHTML = (amount.innerHTML - 1);
+    }
 });

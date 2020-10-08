@@ -665,6 +665,11 @@ header .bottom-header > ul li:nth-child(2) a {
   border-top-color: transparent;
 }
 
+#content .products .product-info .buy .amount div:last-child button:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 #content .products .product-info .buy .buy-btn {
   width: 130px;
   margin-left: 13px;
@@ -1058,5 +1063,14 @@ header .bottom-header > ul li:nth-child(2) a {
 
 .scroll i:first-child {
   margin-right: 5px;
+}
+
+.swal-modal {
+  width: 50%;
+}
+
+.swal-modal .swal-text {
+  font-family: Lato;
+  font-weight: bold;
 }
 /*# sourceMappingURL=styles.css.map */
