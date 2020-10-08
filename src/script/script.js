@@ -11,10 +11,10 @@ document.querySelector('header > .bottom-header > ul li:first-child').addEventLi
 
 var scrollBtn = document.querySelectorAll('.scroll i');
 scrollBtn[0].addEventListener('click', () => {
-    window.scrollTo(0,0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 scrollBtn[1].addEventListener('click', () => {
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 })
 
 // search feature
