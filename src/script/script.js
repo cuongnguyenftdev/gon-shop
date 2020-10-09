@@ -112,8 +112,42 @@ addToCartBtn.addEventListener('click', () => {
 
 });
 
-// click to "love button"
+/* ----- click to "love button" -----*/
 
 document.querySelector('.love').addEventListener('click', () => {
     document.querySelector('.love').classList.toggle("isLove");
 });
+
+/* ----- click to "rotate button" ----- */
+var deg = 0; // current deg
+document.querySelector('.rotate').addEventListener('click', () => {
+    var img = document.querySelector('.zoom img'); // get img needs rotate
+    deg += 90; // +90deg when click to button
+    var tmp = "rotate(" + deg + "deg" + ")";
+    img.style.transform = tmp;
+});
+
+// choose-color 
+
+var chooseSize = document.querySelector(".choose-size");
+var sizeList = document.querySelector(".choose-size ul")
+chooseSize.addEventListener('click', (event) => {
+    sizeList.classList.toggle("is-show"); // show or close size list
+});
+sizeList.addEventListener('click', (event) => {
+    var content = event.target.innerHTML;
+    document.querySelector(".choose-size dsiv span").innerHTML = content;
+})
+
+/* ----- rating ----- */
+
+var rating = document.querySelectorAll(".rating .stars i");
+
+for( let i  = 0; i < rating.length; i++) {
+    rating[i].addEventListener('click', () => {
+        for( let j = 0; j <= i; j++) {
+            rating[j].style.color = "yellow";
+        }
+    })
+}
+ 
