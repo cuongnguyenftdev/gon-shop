@@ -336,6 +336,7 @@ header {
         .zoom {
             left: 130px;
             width: 250px;
+            overflow: hidden;
             img {
                 min-width: 100%;
                 min-height: 100%;
@@ -388,6 +389,7 @@ header {
                     display: inline-block;
                     margin-right: 15px;
                     i {
+                        cursor: pointer;
                         color: #ebebeb;
                         font-size: 10pt;
                         &:not(:nth-child(5)){
@@ -442,7 +444,7 @@ header {
                     color: #808080;
                     font-size: 11pt;
                     font-family: Lato;
-                    margin-right: 30px;
+                    margin-right: 29px;
                 }
                 div {
                     position: relative;
@@ -451,6 +453,7 @@ header {
                     width: 144px;
                     height: 40px;
                     border: 0.5px solid #e8e8e8;
+                    cursor: pointer;
                     span {
                         color: #727272;
                         font-size: 12pt;
@@ -462,6 +465,33 @@ header {
                         top: 50%;
                         right: 10px;
                         transform: translate(-50%, -70%);
+                    }
+                }
+                ul {
+                    position: absolute;
+                    left: 123px;
+                    padding: 0px 10px;
+                    background-color: #fffdfd;
+                    border: 0.5px solid transparent;
+                    width: 144px;
+                    max-height: 0px;
+                    z-index: 10;
+                    transition: all .5s;
+                    overflow: hidden;
+                    cursor: pointer;
+                    li {
+                        list-style: none;
+                        border-bottom: 0.5px solid #ebebeb;
+                        color: #727272;
+                        font-size: 12pt;
+                        font-family: Lato;
+                        &:first-letter {
+                            text-transform: uppercase;
+                        }
+                    }
+                    &.is-show {
+                        max-height: 200px;
+                        border-color: #e8e8e8;
                     }
                 }
             }
@@ -524,7 +554,7 @@ header {
                         transform: scale(1.1);
                     }
                 }
-                .love, .swap {
+                .love, .rotate {
                     margin-left: 13px;
                     width: 40px;
                     text-align: center;
@@ -533,6 +563,9 @@ header {
                 }
                 .love.isLove {
                     background-color: lightcoral;
+                }
+                .rotate:active {
+                    transform: scale(1.1);
                 }
                 
             }
