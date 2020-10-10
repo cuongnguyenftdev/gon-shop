@@ -487,6 +487,7 @@ header .bottom-header > ul li:nth-child(2) a {
 #content .products .zoom {
   left: 130px;
   width: 250px;
+  overflow: hidden;
 }
 
 #content .products .zoom img {
@@ -558,6 +559,7 @@ header .bottom-header > ul li:nth-child(2) a {
 }
 
 #content .products .product-info .rating .stars i {
+  cursor: pointer;
   color: #ebebeb;
   font-size: 10pt;
 }
@@ -627,7 +629,7 @@ header .bottom-header > ul li:nth-child(2) a {
   color: #808080;
   font-size: 11pt;
   font-family: Lato;
-  margin-right: 30px;
+  margin-right: 29px;
 }
 
 #content .products .product-info .choose-size div {
@@ -637,6 +639,7 @@ header .bottom-header > ul li:nth-child(2) a {
   width: 144px;
   height: 40px;
   border: 0.5px solid #e8e8e8;
+  cursor: pointer;
 }
 
 #content .products .product-info .choose-size div span {
@@ -652,6 +655,38 @@ header .bottom-header > ul li:nth-child(2) a {
   right: 10px;
   -webkit-transform: translate(-50%, -70%);
           transform: translate(-50%, -70%);
+}
+
+#content .products .product-info .choose-size ul {
+  position: absolute;
+  left: 123px;
+  padding: 0px 10px;
+  background-color: #fffdfd;
+  border: 0.5px solid transparent;
+  width: 144px;
+  max-height: 0px;
+  z-index: 10;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#content .products .product-info .choose-size ul li {
+  list-style: none;
+  border-bottom: 0.5px solid #ebebeb;
+  color: #727272;
+  font-size: 12pt;
+  font-family: Lato;
+}
+
+#content .products .product-info .choose-size ul li:first-letter {
+  text-transform: uppercase;
+}
+
+#content .products .product-info .choose-size ul.is-show {
+  max-height: 200px;
+  border-color: #e8e8e8;
 }
 
 #content .products .product-info .buy {
@@ -736,7 +771,7 @@ header .bottom-header > ul li:nth-child(2) a {
           transform: scale(1.1);
 }
 
-#content .products .product-info .buy .love, #content .products .product-info .buy .swap {
+#content .products .product-info .buy .love, #content .products .product-info .buy .rotate {
   margin-left: 13px;
   width: 40px;
   text-align: center;
@@ -746,6 +781,11 @@ header .bottom-header > ul li:nth-child(2) a {
 
 #content .products .product-info .buy .love.isLove {
   background-color: lightcoral;
+}
+
+#content .products .product-info .buy .rotate:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #content .products .product-info .socials {
