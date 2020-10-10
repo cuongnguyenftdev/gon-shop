@@ -148,6 +148,9 @@ for( let i  = 0; i < rating.length; i++) {
         for( let j = 0; j <= i; j++) {
             rating[j].style.color = "yellow";
         }
+        for( let j = i + 1; j < rating.length; j++) {
+            rating[j].style.color = "#ebebeb";
+        }
     })
 }
  
