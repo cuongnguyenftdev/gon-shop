@@ -162,4 +162,3 @@ for (let i = 0; i < rating5cols.length; i++) {
     rate(rating5cols[i].children);
 }
 
-
