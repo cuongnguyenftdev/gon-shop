@@ -141,16 +141,25 @@ sizeList.addEventListener('click', (event) => {
 
 /* ----- rating ----- */
 
-var rating = document.querySelectorAll(".rating .stars i");
 
-for( let i  = 0; i < rating.length; i++) {
-    rating[i].addEventListener('click', () => {
-        for( let j = 0; j <= i; j++) {
-            rating[j].style.color = "yellow";
-        }
-        for( let j = i + 1; j < rating.length; j++) {
-            rating[j].style.color = "#ebebeb";
-        }
-    })
+function rate(rating) {
+    for (let i = 0; i < rating.length; i++) {
+        rating[i].addEventListener('click', () => {
+            for (let j = 0; j <= i; j++) {
+                rating[j].style.color = "yellow";
+            }
+            for (let j = i + 1; j < rating.length; j++) {
+                rating[j].style.color = "#ebebeb";
+            }
+        })
+    }
 }
- 
+var rating = document.querySelectorAll(".rating .stars i");
+rate(rating);
+
+var rating5cols = document.querySelectorAll(".product-5-cols .p5-products span:last-child");
+for (let i = 0; i < rating5cols.length; i++) {
+    rate(rating5cols[i].children);
+}
+
+
