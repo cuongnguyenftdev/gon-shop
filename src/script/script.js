@@ -136,7 +136,7 @@ chooseSize.addEventListener('click', (event) => {
 });
 sizeList.addEventListener('click', (event) => {
     var content = event.target.innerHTML;
-    document.querySelector(".choose-size dsiv span").innerHTML = content;
+    document.querySelector(".choose-size div span").innerHTML = content;
 })
 
 /* ----- rating ----- */
